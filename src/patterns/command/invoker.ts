@@ -29,14 +29,12 @@ export class Light {
         if(this.isOn){
              this.isRed = true;
              this.switchRedLight();
-             console.log('default' + this.redNo)
         }
     }
     public increaseRedNo(): void{
         if(this.redNo < 3){
             this.redNo += 1
             this.switchRedLight()
-            console.log('increase' + this.redNo)
         }
 
     }
@@ -44,7 +42,6 @@ export class Light {
         if(this.redNo > 0){
             this.redNo -= 1
             this.switchRedLight()
-            console.log('decrease' + this.redNo)
         }
     }
     public switchRedLight(): void{
@@ -111,8 +108,10 @@ export class Invoker {
                 break
             case "red":
                 this.redCommand.execute()
+                break
             case "redIntensify":
                 this.redIntensifyCommand.execute()
+                break
         }
     }
     unexecuteCommand(command: string){
@@ -123,8 +122,10 @@ export class Invoker {
                 break
             case "red":
                 this.redCommand.unexecute()
+                break
             case "redIntensify":
                 this.redIntensifyCommand.unexecute()
+                break
         }
     }
 }
